@@ -24,12 +24,14 @@ public class SecondActivity extends AppCompatActivity {
 
         //lv = (ListView) this.findViewById(R.id.lvModules);
         tvYear = (TextView) findViewById(R.id.tvYear);
+        lv = (ListView)findViewById(R.id.lvModule);
 
         Intent i = getIntent();
         String year = i.getStringExtra("year");
         tvYear.setText(year);
         code = new ArrayList<Module>();
         aa = new ModuleAdapter(this,R.layout.row, code);
+
         lv.setAdapter(aa);
         if (year.equals("Year 1")){
             code.add(new Module("A113",true));
